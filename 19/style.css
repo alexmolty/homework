@@ -1,0 +1,137 @@
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Форма */
+#form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#form label {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 180px;
+}
+
+#form input {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#addPerson {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+#addPerson:hover {
+    background-color: #0056b3;
+}
+
+/* Заголовки */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.persons {
+    text-align: center;
+}
+/* Список персон (сетка) */
+#personList {
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+}
+
+/* Заголовок списка */
+#personListHeader {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: rgba(0, 102, 255, 0.11);
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px dashed #aaa;
+}
+.personRow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+/* Ячейки */
+.cell {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    word-break: break-word;
+}
+
+/* Блок статистики */
+#stats {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#stats p {
+    margin: 6px 0;
+}
+
+/* Иконки */
+.imgEdit, .imgTrash {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.imgTrash {
+    content: url("./images/delete.png");
+}
+.imgEdit {
+    content: url("./images/edit.png");
+}
+
+.imgTrash:hover, .imgEdit:hover {
+    transform: scale(1.2);
+}
+
+/* Кастомный алерт */
+.alert {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: default;
+}

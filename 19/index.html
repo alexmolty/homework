@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="form">
+    <label>ID:
+        <input id="personId" type="number" min="0" placeholder="12345678">
+    </label>
+    <label>First Name:
+        <input id="firstName" type="text" placeholder="John">
+    </label>
+    <label>Last Name:
+        <input id="lastName" type="text" placeholder="Smith">
+    </label>
+    <label>Age:
+        <input id="age" type="number" min="0" placeholder="25">
+    </label>
+    <button id="addPerson">Add person</button>
+</div>
+<div class="persons">
+    <h2>Persons</h2>
+    <div id="personListHeader">
+        <div>First name</div>
+        <div>Last name</div>
+        <div>Age</div>
+        <div>ID</div>
+    </div>
+    <div id="personList">
+<!-- Сюда добавляем persons -->
+    </div>
+</div>
+<h2>Stats</h2>
+<div id="stats">
+    <p>Add person to get statistics</p>
+</div>
+</body>
+</html>
