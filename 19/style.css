@@ -54,9 +54,11 @@ h2 {
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
 .persons {
     text-align: center;
 }
+
 /* Список персон (сетка) */
 #personList {
     background-color: #fff;
@@ -66,9 +68,12 @@ h2 {
 }
 
 /* Заголовок списка */
-#personListHeader {
+.personListHeader, .personRow {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+}
+
+.personListHeader {
     background-color: rgba(0, 102, 255, 0.11);
     padding: 10px;
     font-weight: bold;
@@ -76,10 +81,7 @@ h2 {
     border-top-right-radius: 12px;
     border-bottom: 1px dashed #aaa;
 }
-.personRow {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
+
 /* Ячейки */
 .cell {
     padding: 10px;
@@ -108,9 +110,11 @@ h2 {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
+
 .imgTrash {
     content: url("./images/delete.png");
 }
+
 .imgEdit {
     content: url("./images/edit.png");
 }
