@@ -71,8 +71,8 @@ function birthdateInputNotCorrect(birthdateValue) {
 }
 
 function checkInputs() {
-    if (isNaN(personId.value) || personId.value === "") {
-        customAlert('Please enter a valid ID (Only numbers)')
+    if (isNaN(personId.value) || personId.value === "" || personId.value < 0) {
+        customAlert('Please enter a valid ID (Numbers from 0)')
         personId.focus();
         return false;
     }
@@ -146,7 +146,6 @@ function statsUpdate() {
 }
 
 function personInDiv(parent, {firstName, lastName, age, id}) {
-    // const {firstName, lastName, age, id} = person;
     newDOMElement('div', parent, `${firstName}`, 'cell');
     newDOMElement('div', parent, `${lastName}`, 'cell');
     newDOMElement('div', parent, `${age()}`, 'cell');
@@ -182,11 +181,7 @@ function buttonDelete(currentPerson, personRow, divButton) {
 // alerts
 
 function customAlert(text) {
-    const alert = document.createElement('div');
-    alert.classList.add('alert');
-    alert.textContent = text;
-    document.body.appendChild(alert);
-
+    const alert = newDOMElement('div', document.body, text, 'alert')
     requestAnimationFrame(() => {
         alert.style.opacity = '1';
     });
