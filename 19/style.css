@@ -56,7 +56,7 @@ h2 {
 }
 
 .persons {
-    text-align: center;
+    text-align: left;
 }
 
 /* Список персон (сетка) */
@@ -71,23 +71,27 @@ h2 {
 .personListHeader, .personRow {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+.personRow {
+    padding: 10px 10px 0 10px;
 }
 
 .personListHeader {
     background-color: rgba(0, 102, 255, 0.11);
-    padding: 10px;
     font-weight: bold;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     border-bottom: 1px dashed #aaa;
+    padding: 10px;
 }
 
 /* Ячейки */
 .cell {
-    padding: 10px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
     word-break: break-word;
+    padding-bottom: 10px;
 }
 
 /* Блок статистики */

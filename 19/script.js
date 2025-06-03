@@ -39,7 +39,7 @@ function Person(id, firstName, lastName, birthdate) {
         if (monthBirth < monthToday) {
             return age;
         }
-        if (monthBirth === monthBirth) {
+        if (monthBirth === monthToday) {
             if (dayBirth <= dayToday) {
                 return age;
             } else return age - 1;
@@ -47,6 +47,7 @@ function Person(id, firstName, lastName, birthdate) {
         if (monthBirth > monthToday) {
             return age - 1;
         }
+        return age;
     }
 }
 
@@ -59,8 +60,7 @@ birthdate.max = maxDate.toISOString().split('T')[0]; // Устанавливае
 
 function birthdateInputNotCorrect(birthdateValue) {
     const enteredDate = new Date(birthdateValue);
-    const minDate = new Date();
-    minDate.setFullYear(1900);
+    const minDate = new Date('1900-01-01');
     return (birthdateValue === "" ||
         isNaN(enteredDate.getTime()) ||
         enteredDate > today ||
@@ -118,7 +118,6 @@ function printList() {
     persons.forEach((person) => {
         const personRow = newDOMElement('div', personList, '', 'personRow')
         personInDiv(personRow, person)
-        personList.appendChild(personRow);
         const divButton = newDOMElement('div', personRow, '', 'cell');
         buttonEdit(person, personRow, divButton);
         buttonDelete(person, personRow, divButton);
