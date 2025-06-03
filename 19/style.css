@@ -1,7 +1,7 @@
 /* Базовые стили */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #ebf1f3;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -45,7 +45,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#addPerson:hover {
+#addPerson:hover, #confirmNo:hover, #confirmYes:hover {
     background-color: #0056b3;
 }
 
@@ -143,3 +143,33 @@ h2 {
     transition: opacity 0.5s ease;
     cursor: default;
 }
+
+.confirm-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+}
+.confirm-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.confirm-box>button {
+    margin: 0 20px 0 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+.hidden { display: none; }

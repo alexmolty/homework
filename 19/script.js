@@ -8,6 +8,9 @@ const birthdate = document.getElementById('birthdate');
 const addPerson = document.getElementById('addPerson');
 const personList = document.getElementById('personList');
 const stats = document.getElementById('stats');
+const customConfirm = document.getElementById('customConfirm');
+const confirmYes = document.getElementById('confirmYes');
+const confirmNo = document.getElementById('confirmNo');
 const today = new Date();
 
 // constructors
@@ -142,11 +145,12 @@ function statsUpdate() {
     } else newDOMElement('p', stats, 'Add person to get statistics');
 }
 
-function personInDiv(parent, person) {
-    newDOMElement('div', parent, `${person.firstName}`, 'cell');
-    newDOMElement('div', parent, `${person.lastName}`, 'cell');
-    newDOMElement('div', parent, `${person.age()}`, 'cell');
-    newDOMElement('div', parent, `${person.id}`, 'cell');
+function personInDiv(parent, {firstName, lastName, age, id}) {
+    // const {firstName, lastName, age, id} = person;
+    newDOMElement('div', parent, `${firstName}`, 'cell');
+    newDOMElement('div', parent, `${lastName}`, 'cell');
+    newDOMElement('div', parent, `${age()}`, 'cell');
+    newDOMElement('div', parent, `${id}`, 'cell');
 }
 
 // buttons
@@ -161,11 +165,16 @@ function buttonEdit(currentPerson, personRow, divButton) {
 function buttonDelete(currentPerson, personRow, divButton) {
     const trash = newDOMElement('img', divButton, '', 'imgTrash');
     trash.onclick = () => {
-        if (confirm('Are you sure you want to delete this person?')) {
+        customConfirm.classList.remove('hidden');
+        confirmNo.onclick = () => {
+            customConfirm.classList.add('hidden');
+        }
+        confirmYes.onclick = () => {
             let indexCurrentPerson = persons.findIndex(person => person.id === currentPerson.id);
             persons.splice(indexCurrentPerson, 1);
             personRow.remove();
             statsUpdate();
+            customConfirm.classList.add('hidden');
         }
     }
 }
